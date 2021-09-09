@@ -10,7 +10,7 @@
 
     <title>Intern Project Website</title>
 
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="assets/favicon.png" />
 
     <!-- core CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
@@ -21,9 +21,9 @@
     <main class="flex-shrink-0">
 
         <!-- Navigation-->
-        <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark py-4">
+        <nav class="navbar sticky-top navbar-expand-lg navbar-dark background-primary py-4">
             <div class="container px-3">
-                <a class="navbar-brand" href="index.html">Website Name</a>
+                <a class="navbar-brand" href="https://sunbird.ai/"><img src="assets/logo.png" style="width:200px;height:50px;"/></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -31,8 +31,7 @@
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
-                        <li class="nav-item"><a class="nav-link" href="blog-home.html">Blog</a></li>
+                        <!-- <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li> -->
                         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                     </ul>
                 </div>
@@ -40,13 +39,13 @@
         </nav>
 
         <!-- Header-->
-        <header class="bg-dark py-5">
+        <header class="bg-dark py-5" style="background-image: url('assets/backgroundImage.png'); background-repeat: no-repeat; background-attachment: fixed; background-size: cover; background-size: 100% 100%;">
             <div class="container px-5">
                 <div class="row gx-5 align-items-center justify-content-center">
                     <div class="col-lg-8 col-xl-7 col-xxl-6">
-                        <div class="my-5 text-center text-xl-start">
-                            <h1 class="display-5 fw-bolder text-white mb-2 text-center">Website Name</h1>
-                            <p class="lead fw-normal text-white-50 mb-4 text-center">Machine translation service for African languages!</p>
+                        <div class="my-5 text-center text-xl-start pb-md-4">
+                            <h1 class="display-5 fw-bolder text-white mb-2 text-center">Sunbird AI</h1>
+                            <p class="lead fw-normal mb-4 text-center" style="color: #ffaa28;">Machine translation service for Ugandan languages</p>
                         </div>
                     </div>
                 </div>
@@ -55,22 +54,23 @@
 
         <!-- Features section-->
         <section class="py-5" id="features">
-            <div class="container px-5 my-5">
+            <div class="container px-5 mt-5">
                 <div class="row gx-5">
                     <div class="card col-md-12 px-0">
-                        <div class="card-header py-3">
+                        <div class="card-header py-3" style="background-color: #282850;">
                             <div class="row">
                                 
-                                <div class="col-md-6" style="border-right: 1px solid #000;">
+                                <div class="col-md-6" style="border-right: 1px solid #fff;">
                                     <div class="row">
-                                        <div class="col-auto">From:</div>
+                                        <div class="col-auto text-white">From:</div>
                                         <div class="col-auto">
                                             <div class="dropdown">
-                                                <a class="btn btn-outline-dark btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <a class="btn btn-outline-light btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                                                     Languages
                                                 </a>
                                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                                     <li><a class="dropdown-item" href="#">Luganda</a></li>
+                                                    <li><a class="dropdown-item" href="#">English</a></li>
                                                     <li><a class="dropdown-item" href="#">Lugbara</a></li>
                                                     <li><a class="dropdown-item" href="#">Runyakitara</a></li>
                                                     <li><a class="dropdown-item" href="#">Acholi</a></li>
@@ -83,14 +83,15 @@
                                 
                                 <div class="col-md-6">
                                     <div class="row">
-                                        <div class="col-auto">To:</div>
+                                        <div class="col-auto text-white">To:</div>
                                         <div class="col-auto">
                                             <div class="dropdown">
-                                                <a class="btn btn-outline-dark btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <a class="btn btn-outline-light btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                                                     Languages
                                                 </a>
                                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                                     <li><a class="dropdown-item" href="#">Luganda</a></li>
+                                                    <li><a class="dropdown-item" href="#">English</a></li>
                                                     <li><a class="dropdown-item" href="#">Lugbara</a></li>
                                                     <li><a class="dropdown-item" href="#">Runyakitara</a></li>
                                                     <li><a class="dropdown-item" href="#">Acholi</a></li>
@@ -134,51 +135,35 @@
             </div>
         </section>
 
-        <!-- Testimonial section-->
-        <div class="py-5 bg-light">
-            <div class="container px-5 my-5">
-                <div class="row gx-5 justify-content-center">
-                    <div class="col-lg-10 col-xl-7">
-                        <div class="text-center">
-                            <div class="fs-4 mb-4 fst-italic">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.!"</div>
-                            <div class="d-flex align-items-center justify-content-center">
-                                <div class="fw-bold">
-                                    Tom Ato
-                                    <span class="fw-bold text-primary mx-1">/</span>
-                                    CEO, Pomodoro
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <!-- Features section-->
         <section class="py-5" id="features">
-            <div class="container px-5 my-5">
+            <div class="container px-5">
                 <div class="row gx-5">
-                    <div class="col-lg-4 mb-5 mb-lg-0"><h2 class="fw-bolder mb-0">Languages our system can translate.</h2></div>
+                    <div class="col-lg-4 mb-5 mb-lg-0"><h2 class="fw-bolder mb-0" style="color: #282850;">Languages our system can translate.</h2></div>
                     <div class="col-lg-8">
                         <div class="row gx-5 row-cols-1 row-cols-md-2">
                             <div class="col mb-5 h-100">
-                                <h2 class="fw-bold h5">Luganda</h2>
+                                <h2 class="fw-bold h5" style="color: #282850;">Luganda</h2>
                                 <p class="mb-0">Paragraph of text beneath the heading to explain the heading. Here is just a bit more text.</p>
                             </div>
                             <div class="col mb-5 h-100">
-                                <h2 class="fw-bold h5">Lugbara</h2>
+                                <h2 class="fw-bold h5" style="color: #282850;">English</h2>
                                 <p class="mb-0">Paragraph of text beneath the heading to explain the heading. Here is just a bit more text.</p>
                             </div>
                             <div class="col mb-5 h-100">
-                                <h2 class="fw-bold h5">Runyakitara</h2>
+                                <h2 class="fw-bold h5" style="color: #282850;">Lugbara</h2>
                                 <p class="mb-0">Paragraph of text beneath the heading to explain the heading. Here is just a bit more text.</p>
                             </div>
                             <div class="col mb-5 h-100">
-                                <h2 class="fw-bold h5">Acholi</h2>
+                                <h2 class="fw-bold h5" style="color: #282850;">Runyakitara</h2>
+                                <p class="mb-0">Paragraph of text beneath the heading to explain the heading. Here is just a bit more text.</p>
+                            </div>
+                            <div class="col mb-5 h-100">
+                                <h2 class="fw-bold h5" style="color: #282850;">Acholi</h2>
                                 <p class="mb-0">Paragraph of text beneath the heading to explain the heading. Here is just a bit more text.</p>
                             </div>
                             <div class="col mb-md-0 h-100">
-                                <h2 class="fw-bold h5">Ateso</h2>
+                                <h2 class="fw-bold h5" style="color: #282850;">Ateso</h2>
                                 <p class="mb-0">Paragraph of text beneath the heading to explain the heading. Here is just a bit more text.</p>
                             </div>
                         </div>
@@ -191,7 +176,7 @@
         <section class="py-5">
             <div class="container px-5 mb-5">
                 <!-- Call to action-->
-                <aside class="bg-primary bg-gradient rounded-3 p-sm-5 p-4">
+                <aside class="background-primary bg-gradient rounded-3 p-sm-5 p-4">
                     <div class="d-flex align-items-center justify-content-between flex-column flex-xl-row text-center text-xl-start">
                         <div class="mb-4 mb-xl-0">
                             <div class="fs-3 fw-bold text-white">New languages, delivered to you.</div>
@@ -200,7 +185,7 @@
                         <div class="ms-xl-4">
                             <div class="input-group mb-2">
                                 <input class="form-control" type="text" placeholder="Email address..." aria-label="Email address..." aria-describedby="button-newsletter" />
-                                <button class="btn btn-outline-light" id="button-newsletter" type="button">Sign up</button>
+                                <button class="btn btn-outline-light" id="button-newsletter" type="button"><span style="color: #ffaa28;">Sign up</span></button>
                             </div>
                             <div class="small text-white-50">We care about privacy, and will never share your data.</div>
                         </div>
@@ -212,13 +197,13 @@
     </main>
 
     <!-- Footer-->
-    <footer class="bg-dark py-4 mt-auto">
+    <footer class="py-4 mt-auto background-primary">
         <div class="container px-3">
             <div class="row align-items-center justify-content-between flex-column flex-sm-row">
-                <div class="col-auto">
-                    <p class="small m-0 text-white text-center">This is a community research project and as such, this service is not a production system. Therefore, it should not be used for official translations. Don't see your language and interested in training one up yourself? Go here to learn how to contribute a model!</p>
-                    <p class="small m-0 text-white py-2 text-center">The models are powered by JoeyNMT🐨; a minimalist machine translation toolkit based on pytorch.</p>
-                    <div class="small m-0 text-white pt-2 text-center">Copyright &copy; Your Website 2021</div>
+                <div class="col-12">
+                    <p class="small m-0 text-white text-center">An African technology initiative to create open, practical AI systems for community benefit.</p>
+                    <p class="medium m-0 text-white py-2 text-center">Please <a href=""><span style="color: #ffaa28;">email us</span></a> to find out more</p>
+                    <div class="small m-0 text-white pt-2 text-center">Copyright &copy; Sunbird AI 2021</div>
                 </div>
             </div>
         </div>
