@@ -87,12 +87,12 @@
                                         <div class="col-auto text-white">From:</div>
                                         <div class="col-auto">
                                             <select id="languageFrom" class="form-select" aria-label="Language translated from">
-                                                <option value="English" selected>English</option>
-                                                <option value="Luganda">Luganda</option>
-                                                <option value="Lugbara">Lugbara</option>
-                                                <option value="Runyakitara">Runyakitara</option>
-                                                <option value="Acholi">Acholi</option>
-                                                <option value="Ateso">Ateso</option>
+                                                <option value="en" selected>English</option>
+                                                <option value="lg">Luganda</option>
+                                                <option value="lgg">Lugbara</option>
+                                                <option value="run">Runyakitara</option>
+                                                <option value="ach">Acholi</option>
+                                                <option value="at">Ateso</option>
                                             </select>
                                         </div>
                                     </div>
@@ -103,12 +103,12 @@
                                         <div class="col-auto text-white">To:</div>
                                         <div class="col-auto">
                                             <select id="languageTo" class="form-select" aria-label="Language to translate to">
-                                                <option value="Luganda" selected>Luganda</option>
-                                                <option value="English">English</option>
-                                                <option value="Lugbara">Lugbara</option>
-                                                <option value="Runyakitara">Runyakitara</option>
-                                                <option value="Acholi">Acholi</option>
-                                                <option value="Ateso">Ateso</option>
+                                                <option value="lg" selected>Luganda</option>
+                                                <option value="en">English</option>
+                                                <option value="lgg">Lugbara</option>
+                                                <option value="run">Runyakitara</option>
+                                                <option value="ach">Acholi</option>
+                                                <option value="at">Ateso</option>
                                             </select>
                                         </div>
                                     </div>
@@ -345,7 +345,7 @@
                 <aside class="background-primary bg-gradient rounded-3 p-sm-5 p-4">
                     <div class="d-flex align-items-center justify-content-between flex-column flex-xl-row text-center text-xl-start">
                         <div class="mb-4 mb-xl-0">
-                            <div class="fs-3 fw-bold text-white">New languages, delivered to you.</div>
+                            <div class="fs-3 fw-bold text-white">Language translations, delivered to you.</div>
                             <div class="text-white-50">Sign up for our newsletter for the latest updates.</div>
                         </div>
                         <div class="ms-xl-4">
@@ -386,8 +386,8 @@
     <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
     <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
 
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
 
     <!-- core JS-->
     <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
@@ -395,31 +395,53 @@
 
     <script type="text/javascript">
         async function sendData() {
+            //translated data
+            let dataFromModel = '';
+
             //getting language from
             let selectLanguageFrom = document.getElementById('languageFrom');
-            let selectLanguageFromtext = selectLanguageFrom.options[selectLanguageFrom.selectedIndex].text;
+            let selectLanguageFromtext = selectLanguageFrom.options[selectLanguageFrom.selectedIndex].value;
 
             //getting data to translate
             let dataToTranslate = document.getElementById("plainData").value; 
 
             //getting language to
             let selectLanguageTo = document.getElementById('languageTo');
-            let selectLanguageToText = selectLanguageTo.options[selectLanguageTo.selectedIndex].text;
+            let selectLanguageToText = selectLanguageTo.options[selectLanguageTo.selectedIndex].value;
 
             let dataObj = {
-                'from': selectLanguageFromtext,
-                'text': dataToTranslate,
-                'to': selectLanguageToText
+                "text": dataToTranslate,
+                "source": selectLanguageFromtext,
+                "target": selectLanguageToText
             }
 
-            let response = await fetch(`https://api.agify.io?name=${dataToTranslate}`);
-            let dataFromModel = await response.json();
-            console.log(dataFromModel);
+            //error 500 at this point
+            postData(dataObj)
+            .then(data => {
+                console.log(data);
+                //dataFromModel = data;
+            })
+            .catch((err) => {
+                console.log('error', err);
+            });
 
-            let answer = `Age is ${dataFromModel.age}`;
-            document.getElementById("translatedData").value = answer;
+            //document.getElementById("translatedData").value = `${dataFromModel}`;
+        }
+
+        async function postData(data) {
+            const response = await fetch('http://34.245.125.169:5001/translate', {
+                method: 'POST',
+                mode: 'no-cors',
+                cache: 'no-cache',
+                headers: {
+                    "Content-type": "application/json; charset=UTF-8"
+                },
+                redirect: 'follow',
+                referrerPolicy: 'no-referrer',
+                body: JSON.stringify(data)
+            })
+            return response.json();
         }
     </script>
-
 </body>
 </html>
